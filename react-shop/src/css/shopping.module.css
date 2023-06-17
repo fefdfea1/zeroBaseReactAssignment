@@ -1,0 +1,35 @@
+.shoppingHeight {
+  min-height: calc(100vh - 10rem);
+}
+
+.backgroundColor {
+  background-color: var(--productBackGroundColor);
+}
+
+.FontColor {
+  color: var(--productTitleColor);
+}
+
+.buttonBackgroundColor {
+  background-color: var(--detailButtonBackgroundColor);
+}
+
+.liWidth {
+  min-width: 1200px;
+}
+
+li.arrow {
+  position: relative;
+}
+
+li.arrow::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid var(--productTitleColor);
+  border-top: 1px solid var(--productTitleColor);
+  transform: rotate(135deg);
+}

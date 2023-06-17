@@ -1,0 +1,11 @@
+.footerBackgroun {
+  background-color: var(--footerBackgroundColor);
+}
+
+.footerBorder {
+  border-top: 1px solid var(--productBorderColor);
+}
+
+.footerSvgColor {
+  fill: var(--headerSvgFillColor);
+}

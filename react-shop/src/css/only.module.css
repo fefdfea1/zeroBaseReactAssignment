@@ -1,0 +1,26 @@
+.sectionBackground {
+  background-color: var(--productBackGroundColor);
+}
+
+.sectionHeight {
+  min-height: calc(100vh - 10rem);
+}
+
+.fontColor {
+  color: var(--productTitleColor);
+}
+
+li.arrow {
+  position: relative;
+}
+li.arrow::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid var(--productTitleColor);
+  border-top: 1px solid var(--productTitleColor);
+  transform: rotate(135deg);
+}

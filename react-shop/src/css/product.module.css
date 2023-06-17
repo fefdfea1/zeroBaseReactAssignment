@@ -1,0 +1,61 @@
+.productTitleColor {
+  color: var(--productTitleColor);
+}
+
+.productDescColor {
+  background-color: var(--productDescColor);
+}
+
+.productMargin {
+  margin: 0 20px;
+}
+
+.productWidth {
+  width: 810px;
+}
+
+.productBorder {
+  border: 1px solid var(--productBorderColor);
+}
+
+.slideUlTransition {
+  transition: transform 1s;
+}
+
+.leftButtonPosition {
+  top: -1%;
+  left: 1%;
+}
+
+.rightButtonPosition {
+  top: -1%;
+  right: 1%;
+}
+
+.productCardBorder {
+  border: 1px solid var(--productBorderColor);
+}
+
+.productCardMargin {
+  margin-top: -1px;
+}
+
+.productDescBackgroundColor {
+  background-color: var(--productDescBackgroundColor);
+}
+
+.ArrowColor {
+  fill: var(--headerSvgFillColor);
+}
+
+@media (max-width: 1560px) {
+  .productWidth {
+    width: 360px;
+  }
+}
+
+/* @media (max-width: 1024px) {
+  .productWidth {
+    width: 480px;
+  }
+} */

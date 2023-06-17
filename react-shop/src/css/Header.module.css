@@ -1,0 +1,23 @@
+.header_color {
+  background-color: var(--headerColor);
+}
+
+.inputBackground {
+  background-color: var(--headerSearchBoxColor);
+}
+
+.headerFontColor {
+  color: var(--headerFontColor);
+}
+
+.svgFill {
+  fill: var(--headerSvgFillColor);
+}
+
+.searchListBorder {
+  border: 1px solid var(--productBorderColor);
+}
+
+.searchListBackgroundColor {
+  background-color: var(--headerSearchBoxColor);
+}

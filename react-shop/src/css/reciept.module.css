@@ -1,0 +1,22 @@
+.recieptPosition {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.background {
+  background-color: var(--recieptBackgroundColor);
+}
+
+.productBackground {
+  background-color: var(--recieptProductBackgroundCoor);
+}
+
+.FontColor {
+  color: var(--productTitleColor);
+}
+
+.recieptStyle {
+  max-height: 830px;
+}

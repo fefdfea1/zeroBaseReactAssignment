@@ -1,0 +1,17 @@
+:root {
+  --headerColor: rgb(25, 30, 36);
+  --headerSearchBoxColor: rgb(76, 85, 100);
+  --headerFontColor: rgba(255, 255, 255);
+  --headerSvgFillColor: rgb(255, 255, 255);
+  --productDescColor: rgb(56, 65, 82);
+  --productBackGroundColor: rgb(42, 48, 60);
+  --productComponentColor: rgb(42, 48, 60);
+  --productTitleColor: rgb(166, 174, 186);
+  --productBorderColor: rgb(45, 52, 62);
+  --productDescBackgroundColor: rgb(56, 65, 82);
+  --detailButtonBackgroundColor: rgb(101, 26, 230);
+  --recieptBackgroundColor: rgba(128, 128, 128, 0.5);
+  --recieptProductBackgroundCoor: rgb(15, 23, 42);
+  --footerBackgroundColor: rgb(37, 41, 52);
+  --footerColor: rgb(37, 41, 52);
+}

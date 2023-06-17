@@ -1,0 +1,11 @@
+.sectionBackgorund {
+  background-color: var(--productBackGroundColor);
+}
+
+.sectionHeight {
+  height: calc(100vh - 10rem);
+}
+
+.sectionPadding {
+  padding-bottom: 3rem;
+}

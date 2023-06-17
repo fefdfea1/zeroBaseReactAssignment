@@ -1,0 +1,73 @@
+.sectionHeight {
+  min-height: calc(100vh - 10rem);
+}
+
+.productBackground {
+  background-color: var(--productBackGroundColor);
+}
+
+.blankStar {
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+  background-image: url("/public/img/blankStar.png");
+  background-repeat: no-repeat;
+}
+
+.blankStar.Star {
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+  background-image: url("/public/img/Star.png");
+  background-repeat: no-repeat;
+}
+
+.blankStar.halfStar {
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+  background-image: url("/public/img/halfStar.png");
+  background-repeat: no-repeat;
+}
+
+.imgArticleBoxSize {
+  width: 375px;
+  height: 279px;
+}
+
+.FontColor {
+  color: var(--productTitleColor);
+}
+
+li.arrow {
+  position: relative;
+}
+li.arrow::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid var(--productTitleColor);
+  border-top: 1px solid var(--productTitleColor);
+  transform: rotate(-45deg);
+}
+
+.height500 {
+  height: 500px;
+}
+
+.width567 {
+  width: 567px;
+}
+
+.buttonBackgroundColor {
+  background-color: var(--detailButtonBackgroundColor);
+}
+
+.button2Color {
+  background-color: var(--productBackGroundColor);
+  border: 1px solid #fff;
+  color: #999;
+}

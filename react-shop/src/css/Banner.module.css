@@ -1,0 +1,34 @@
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  content: "";
+  line-height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.bannerHeight {
+  height: 700px;
+}
+
+.bannerTextPotionX {
+  left: 9%;
+}
+
+.Transform50_50 {
+  transform: translate(-50%, -50%);
+}
+
+.TranslateY50 {
+  transform: translateY(-50%);
+}
+
+.bannerDescColor {
+  background-color: #191e24;
+}
+
+.bannerTextColor {
+  color: #c0c0c0;
+}
