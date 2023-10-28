@@ -11,7 +11,7 @@ export default function Footer() {
           <img src="/svg/visaCard.svg" alt="카드" className="w-10" />
           <img src="/svg/discoverCard.svg" alt="카드" className="w-10" />
           <img src="/svg/masterCard.svg" alt="카드" className="w-10" />
-          <img src="/svg/PaypalCard.svg" alt="카드" className="w-10" />
+          <img src="/svg/PayPalCard.svg" alt="카드" className="w-10" />
         </div>
         <div className="shareOption w-full flex justify-center content-center mt-4">
           <a href="https://www.facebook.com/0base" target="_blank">
