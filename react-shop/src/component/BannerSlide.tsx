@@ -8,9 +8,9 @@ export default function BannerSlide() {
   const ref = useRef<HTMLUListElement>(null);
   let timer = 0;
   const BannerImgPath = [
-    { src: "../public/img/img_shop_fashion.jpeg", url: "fashion", id: 1 },
-    { src: "../public/img/img_shop_digital.jpeg", url: "digital", id: 2 },
-    { src: "../public/img/img_shop_grocery.jpeg", url: "jewery", id: 3 },
+    { src: "/img/img_shop_fashion.jpeg", url: "fashion", id: 1 },
+    { src: "/img/img_shop_digital.jpeg", url: "digital", id: 2 },
+    { src: "/img/img_shop_grocery.jpeg", url: "jewery", id: 3 },
   ];
   useEffect(() => {
     if (ref.current instanceof HTMLUListElement) {
