@@ -36,3 +36,7 @@ li.arrow::before {
 .productItemBackground {
   background-color: var(--whiteBg);
 }
+
+.productTitle {
+  color: var(--productTitleColor);
+}
