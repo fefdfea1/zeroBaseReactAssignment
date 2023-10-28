@@ -16,7 +16,7 @@ export default function Footer() {
   }, []);
   return (
     <footer
-      className={`py-6 ${style.footerBackgroun} w-full h-40 ${style.footerBorder}`}
+      className={`py-6 ${style.footerBackground} w-full ${style.footerBorder}`}
     >
       <div className="footerContainer w-full h-full flex justify-center items-center flex-col">
         <div className="cardList flex justify-center items-center">

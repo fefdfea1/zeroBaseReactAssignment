@@ -38,6 +38,17 @@ export const changeWhiteMode = () => {
     "--productBorderColor",
     "rgb(231, 231, 232)"
   );
+  document.documentElement.style.setProperty(
+    "--productItemBackgorundWhiteMode",
+    "rgb(0,0,0)"
+  );
+
+  document.documentElement.style.setProperty(
+    "--recieptProductBackgroundCoor",
+    "rgb(211,211,211)"
+  );
+
+  document.documentElement.style.setProperty("--whiteBg", "rgb(211,211,211)");
 };
 
 export const changeDarkMode = () => {
@@ -79,6 +90,17 @@ export const changeDarkMode = () => {
   document.documentElement.style.setProperty(
     "--headerFontColor",
     "rgb(255,255,255)"
+  );
+  document.documentElement.style.setProperty(
+    "--productItemBackgorundWhiteMode",
+    "rgb(42, 48, 60)"
+  );
+
+  document.documentElement.style.setProperty("--whiteBg", "rgb(255,255,255)");
+
+  document.documentElement.style.setProperty(
+    "--recieptProductBackgroundCoor",
+    "rgb(15, 23, 42)"
   );
 };
 

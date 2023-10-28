@@ -1,15 +1,10 @@
 import { useState, useEffect } from "react";
 import MainPage from "./component/MainPage";
-import Product_fashion from "./component/Product_fashion";
-import Product_accessory from "./component/product_accessory";
-import Product_digital from "./component/product_digital";
+import OnlyProduct from "./component/OnlyProduct";
 import Detail from "./component/Detail";
 import React from "react";
-import Product_only_fashionItem from "./component/Product_only_fashionItem";
-import Product_only_accessoty from "./component/Product_only_accessoty";
-import Product_only_digital from "./component/Product_only_digital";
 import ShoppingList from "./component/ShoppingList";
-import { getProductData } from "./script/fetch";
+import { getProductData } from "./script/ProductFetch";
 import { productType } from "./componentType/ProductData";
 import { Route, Routes } from "react-router-dom";
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
@@ -71,34 +66,30 @@ export const userDispatch = React.createContext<{
   Data: productType[];
 }>({ Data: [] });
 function App() {
-  const [Data, setData] = useState([]);
+  const [Data, setData] = useState<productType[]>([]);
   useEffect(() => {
     const getData = async () => {
       const data = await getProductData();
-      const result = await data.json();
+      const result = (await data.json()) as productType[];
       setData(result);
     };
     getData();
   }, []);
 
   return (
-    <div className="wrap">
+    <div className="wrap select-none">
       <Provider store={store}>
         <userDispatch.Provider value={{ Data }}>
           <Routes>
             <Route path="/" Component={MainPage} />
-            <Route path="/fashion" Component={Product_fashion} />
             <Route path="/men's clothing/detail/:id" Component={Detail} />
             <Route path="/women's clothing/detail/:id" Component={Detail} />
-            <Route path="/fashion/detail/:id" Component={Detail} />
-            <Route path="/fashion/only" Component={Product_only_fashionItem} />
-            <Route path="/accessoryData" Component={Product_accessory} />
-            <Route path="/jewelery/detail/:id" Component={Detail} />
-            <Route path="/accessory/only" Component={Product_only_accessoty} />
-            <Route path="/digitalData" Component={Product_digital} />
-            <Route path="/electronics/detail/:id" Component={Detail} />
-            <Route path="/digital/only" Component={Product_only_digital} />
+            <Route
+              path="/OnlyProduct/:productCategory"
+              Component={OnlyProduct}
+            />
             <Route path="/shoppingList" Component={ShoppingList} />
+            <Route path="/detail/:id" Component={Detail} />
           </Routes>
         </userDispatch.Provider>
       </Provider>

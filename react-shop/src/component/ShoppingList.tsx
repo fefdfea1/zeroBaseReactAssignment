@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { userDispatch, RootState } from "../App";
 import { productType } from "../componentType/ProductData";
 import { useState, useContext, useEffect } from "react";
-import styles from "../css/shopping.module.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Reciept from "./Reciept";
@@ -82,37 +81,43 @@ export default function ShoppingList() {
     <div>
       {recieptState && <Reciept state={setReciept} />}
       <section
-        className={`${styles.shoppingHeight} ${styles.backgroundColor} relative`}
+        className={`${style.shoppingHeight} ${style.backgroundColor} relative`}
       >
         <Header />
-        <ul className={`w-full mt-10 flex items-center ${styles.FontColor}`}>
+        <ul className={`w-full mt-10 flex items-center ${style.FontColor}`}>
           <li className="ml-20">홈</li>
-          <li className={`ml-6 ${styles.arrow} relative`}>장바구니</li>
+          <li className={`ml-6 ${style.arrow} relative`}>장바구니</li>
         </ul>
-        <div className="productListContainer mt-28 ml-20 flex flex-col justify-center">
+        <div className="productListContainer mt-28 md:ml-20 flex flex-col justify-center">
           <ul className="flex flex-col max-w-screen-2xl">
             {productState ? (
               Product.map((item, i) => {
                 return (
-                  <li className={`mt-6 ${style.liWidth}`} key={item.id}>
-                    <div className={`productList flex items-center`}>
+                  <li
+                    className={`mobile:mt-10 md:mt-6 ${style.liWidth}`}
+                    key={item.id}
+                  >
+                    <div
+                      className={`productList flex items-center flex mobile:flex-col md:flex-row`}
+                    >
                       <div className="left">
                         <figure className="p-10 bg-white rounded-lg">
                           <img
                             src={item.image}
                             alt="상품이미지"
                             style={{ width: "200px", height: "200px" }}
+                            className="max-w-none"
                           />
                         </figure>
                       </div>
-                      <div className="middle ml-12">
+                      <div className="mobile:w-72 md:w-auto middle md:ml-12 mobile:mt-10">
                         <p
-                          className={`${style.FontColor} text-3xl mb-8 font-bold`}
+                          className={`${style.FontColor} mb-8 font-bold sm:text-sm lg:text-3xl`}
                         >
                           {item.title}
                         </p>
                         <p
-                          className={`${style.FontColor} text-4xl mb-8 font-bold`}
+                          className={`${style.FontColor} text-4xl mb-8 font-bold mobile:text-sm lg:text-3xl`}
                         >
                           {Product
                             ? `$${item.price * productQuantity[i]}`
@@ -120,7 +125,7 @@ export default function ShoppingList() {
                         </p>
                         <div className="productQuantity">
                           <button
-                            className={`${style.FontColor} ${style.buttonBackgroundColor} p-4 text-xl font-bold rounded-l-2xl`}
+                            className={`${style.FontColor} ${style.buttonBackgroundColor} p-4  font-bold rounded-l-2xl mobile:text-sm lg:text-3xl`}
                             onClick={() => {
                               setQuantity(
                                 changeQuantityMinuse(productQuantity, i)
@@ -130,12 +135,12 @@ export default function ShoppingList() {
                             -
                           </button>
                           <span
-                            className={`ml-7 ${style.FontColor} text-xl font-bold`}
+                            className={`ml-7 ${style.FontColor} text-xl font-bold mobile:text-sm lg:text-3xl`}
                           >
                             {productQuantity[i]}
                           </span>
                           <button
-                            className={`${style.FontColor}  ${style.buttonBackgroundColor} py-4 px-4 text-xl ml-7 font-bold rounded-r-2xl`}
+                            className={`${style.FontColor}  ${style.buttonBackgroundColor} py-4 px-4 ml-7 font-bold rounded-r-2xl mobile:text-sm lg:text-3xl`}
                             onClick={() => {
                               setQuantity(
                                 changeQuantityPluse(productQuantity, i)
@@ -151,13 +156,17 @@ export default function ShoppingList() {
                 );
               })
             ) : (
-              <p className={`mt-10 ${style.FontColor} text-4xl`}>
+              <p
+                className={`mt-10 ${style.FontColor} mobile:text-sm lg:text-3xl`}
+              >
                 상품이 존재하지 않습니다
               </p>
             )}
             <div className="ml-auto mb-36">
               {productState && (
-                <span className={`${style.FontColor} text-4xl`}>
+                <span
+                  className={`${style.FontColor} mobile:text-sm lg:text-3xl`}
+                >
                   {`총:`}
                   {calcAllPrice(productQuantity, Product)}$
                 </span>
@@ -165,7 +174,7 @@ export default function ShoppingList() {
 
               {productState && (
                 <button
-                  className={`ml-5 p-4 text-white ${style.buttonBackgroundColor} rounded-2xl`}
+                  className={`ml-5 p-4 text-white ${style.buttonBackgroundColor} rounded-2xl mobile:text-sm lg:text-3xl md: mr-20 lg:mr-0`}
                   onClick={() => {
                     changeRecieptState(setReciept);
                     setProduct([]);

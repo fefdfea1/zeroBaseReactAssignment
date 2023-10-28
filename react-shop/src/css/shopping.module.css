@@ -1,5 +1,5 @@
 .shoppingHeight {
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 8rem);
 }
 
 .backgroundColor {
@@ -15,7 +15,7 @@
 }
 
 .liWidth {
-  min-width: 1200px;
+  max-width: 1200px;
 }
 
 li.arrow {

@@ -1,0 +1,13 @@
+.initHambergerItem2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.initHambergerItem3 {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  transform: translateY(-50%);
+}

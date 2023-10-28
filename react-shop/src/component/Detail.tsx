@@ -32,12 +32,10 @@ export default function Detail() {
     }
   }
   return (
-    <div
-      className={`detailPage ${detailStyle.productBackground} w-screen h-screen`}
-    >
+    <div className={`detailPage ${detailStyle.productBackground}`}>
       <section className={`w-full ${detailStyle.sectionHeight}`}>
         <Header />
-        <ul className="flex text-white font-bold text-xl mt-11 ml-20">
+        <ul className="flex text-white font-bold text-xl mt-11 mobile:ml-6 md:ml-20">
           <li className={`${detailStyle.liFontColor}`}>
             {currentItem !== undefined ? currentItem[0].category : null}
           </li>
@@ -47,7 +45,7 @@ export default function Detail() {
             {currentItem !== undefined ? currentItem[0].title : null}
           </li>
         </ul>
-        <div className="productDesc ml-20 mt-20 flex items-center">
+        <div className="flex xl:ml-20 md:ml-10 mt-20 mobile:flex-col lg:flex-row items-center">
           <article
             className={`${detailStyle.imgArticleBoxSize} bg-white rounded-3xl shrink-0`}
           >
@@ -61,7 +59,7 @@ export default function Detail() {
               />
             </figure>
           </article>
-          <div className="p-10 font-semibold">
+          <div className=" mobile:p-14 md:p-6 xl:p-10 font-semibold">
             <p className={`${detailStyle.FontColor} text-3xl`}>
               {currentItem[0].title}
             </p>

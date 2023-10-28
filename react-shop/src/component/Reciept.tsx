@@ -35,8 +35,8 @@ export default function Reciept(props: {
         <ul className={`overflow-y-auto ${style.recieptStyle}`}>
           {parseData.map((item) => {
             return (
-              <li key={item.id} className="mt-3">
-                <div className="flex items-center">
+              <li key={item.id} className="lg:mt-3 mobile:mt-10">
+                <div className="flex items-center mobile:flex-col">
                   <figure className="overflow-hidden">
                     <img
                       src={item.image}
@@ -44,7 +44,9 @@ export default function Reciept(props: {
                       style={{ width: "100px", height: "100px" }}
                     />
                   </figure>
-                  <div className={`title ml-5 text-2xl ${style.FontColor}`}>
+                  <div
+                    className={`title ml-5 text-2xl ${style.FontColor} mobile:mt-10`}
+                  >
                     {item.title}
                   </div>
                 </div>

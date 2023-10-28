@@ -1,5 +1,5 @@
 import { dataIndex, ButtonClickType } from "../componentType/Slide";
-import { bannerColor } from "../componentColor/bannerColor";
+import { bannerColor } from "../componentColor/BackgroundColor/bannerColor";
 let currentSlide = 0;
 const timer = 3000;
 let bannerSlideUl: HTMLUListElement;
@@ -25,7 +25,6 @@ const moveinfiniteSlideImage = (timer: number) => {
 
 const imageSlide = (click?: string | number, index?: number) => {
   let translateX = 0;
-
   if (index !== undefined) {
     currentSlide = index;
     translateX = currentSlide * windowWidth;
@@ -139,5 +138,7 @@ export const sideButtonClick = (event: ButtonClickType) => {
 };
 
 export const init = (ref: HTMLUListElement) => {
+  currentSlide = 0;
+  chageDotSlide(0);
   initSlideUlWidth(ref);
 };

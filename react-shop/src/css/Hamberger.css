@@ -1,0 +1,47 @@
+input[id="hamberger"] ~ .slideMenu {
+  background-color: var(--headerColor);
+  transition: all 1s;
+  transform: translateX(-100%);
+}
+
+input[id="hamberger"] ~ label span {
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  background-color: var(--whiteBg);
+}
+
+input[id="hamberger"]:checked + label {
+  position: fixed;
+  top: 2%;
+  left: 12%;
+}
+
+input[id="hamberger"]:checked ~ .slideMenu {
+  display: block;
+  transform: translateX(0%);
+}
+
+input[id="hamberger"]:checked ~ label span:nth-of-type(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="hamberger"]:checked ~ label span:nth-of-type(2) {
+  opacity: 0;
+}
+
+input[id="hamberger"]:checked ~ label span:nth-of-type(3) {
+  top: 38%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.slideMenuUl li {
+  margin-top: 60px;
+  color: var(--whiteBg);
+  font-weight: bold;
+}
+
+.slideMenuUl li a {
+  padding: 10px;
+}

@@ -24,3 +24,15 @@ li.arrow::before {
   border-top: 1px solid var(--productTitleColor);
   transform: rotate(135deg);
 }
+
+.imgposition {
+  background-image: url("/img/starSprite.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 17%;
+  margin-left: -20%;
+}
+
+.productItemBackground {
+  background-color: var(--whiteBg);
+}

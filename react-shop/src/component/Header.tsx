@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import styles from "../css/Header.module.css";
 import { changeWhiteMode, changeDarkMode } from "../script/header";
 import { productType } from "../componentType/ProductData";
+import Hamberger from "./Hamberger";
 export default function Header() {
   const [darkMode, setDarkMode] = useState(true);
   const [input, setInput] = useState("");
@@ -60,10 +61,15 @@ export default function Header() {
     }
   }, []);
   return (
-    <header className={` ${styles.header_color} px-20 shadow-lg`}>
+    <header
+      className={` ${styles.header_color}  mobile:px-10 md:px-20 shadow-lg`}
+    >
       <div className="flex justify-between items-center w-auto mx-auto py-3">
         <nav className="navigation">
-          <ul className="flex justify-between items-center">
+          <div className="md:hidden sm:block">
+            <Hamberger />
+          </div>
+          <ul className="justify-between items-center mobile:hidden md:flex ">
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
@@ -72,17 +78,17 @@ export default function Header() {
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/fashion/only`}>패션</Link>
+              <Link to={`/OnlyProduct/fashion`}>패션</Link>
             </li>
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/accessory/only`}>액세서리</Link>
+              <Link to={`/OnlyProduct/jewery`}>액세서리</Link>
             </li>
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/digital/only`}>디지털</Link>
+              <Link to={`/OnlyProduct/digital`}>디지털</Link>
             </li>
           </ul>
         </nav>
@@ -134,7 +140,7 @@ export default function Header() {
               />
               <div className="productList relative">
                 <ul
-                  className="searchProductList absolute top-2 left-0 w-full z-50"
+                  className="searchProductList absolute top-2 left-0 w-full max-h-80 overflow-auto z-50"
                   ref={ref}
                 >
                   {searchResult.map((item) => {

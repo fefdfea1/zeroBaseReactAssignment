@@ -131,3 +131,7 @@ table {
 #root {
   width: 100%;
 }
+
+img {
+  -webkit-user-drag: none;
+}

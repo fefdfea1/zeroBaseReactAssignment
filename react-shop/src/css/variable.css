@@ -5,6 +5,7 @@
   --headerSvgFillColor: rgb(255, 255, 255);
   --productDescColor: rgb(56, 65, 82);
   --productBackGroundColor: rgb(42, 48, 60);
+  --productItemBackgorundWhiteMode: rgba(255, 255, 255);
   --productComponentColor: rgb(42, 48, 60);
   --productTitleColor: rgb(166, 174, 186);
   --productBorderColor: rgb(45, 52, 62);
@@ -14,4 +15,5 @@
   --recieptProductBackgroundCoor: rgb(15, 23, 42);
   --footerBackgroundColor: rgb(37, 41, 52);
   --footerColor: rgb(37, 41, 52);
+  --whiteBg: rgb(255, 255, 255);
 }
