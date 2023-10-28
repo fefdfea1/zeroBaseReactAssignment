@@ -8,10 +8,10 @@ export default function Footer() {
     >
       <div className="footerContainer w-full h-full flex justify-center items-center flex-col">
         <div className="cardList flex justify-center items-center">
-          <img src="/public/svg/visaCard.svg" alt="카드" className="w-10" />
-          <img src="/public/svg/discoverCard.svg" alt="카드" className="w-10" />
-          <img src="/public/svg/masterCard.svg" alt="카드" className="w-10" />
-          <img src="/public/svg/PaypalCard.svg" alt="카드" className="w-10" />
+          <img src="/svg/visaCard.svg" alt="카드" className="w-10" />
+          <img src="/svg/discoverCard.svg" alt="카드" className="w-10" />
+          <img src="/svg/masterCard.svg" alt="카드" className="w-10" />
+          <img src="/svg/PaypalCard.svg" alt="카드" className="w-10" />
         </div>
         <div className="shareOption w-full flex justify-center content-center mt-4">
           <a href="https://www.facebook.com/0base" target="_blank">
