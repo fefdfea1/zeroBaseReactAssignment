@@ -30,7 +30,7 @@ const imageSlide = (click?: string | number, index?: number) => {
     translateX = currentSlide * windowWidth;
     if (bannerSlideUl instanceof HTMLUListElement) {
       bannerSlideUl.style.transform = `translateX(-${translateX}px)`;
-      chageDotSlide(index);
+      changeDotSlide(index);
       moveinfiniteSlideImage(timer);
     }
     return;
@@ -47,7 +47,7 @@ const imageSlide = (click?: string | number, index?: number) => {
 
     if (bannerSlideUl instanceof HTMLUListElement) {
       bannerSlideUl.style.transform = `translateX(${translateX}px)`;
-      chageDotSlide();
+      changeDotSlide();
     }
     return;
   }
@@ -57,7 +57,7 @@ const imageSlide = (click?: string | number, index?: number) => {
     translateX = 0;
   }
   if (bannerSlideUl instanceof HTMLUListElement) {
-    chageDotSlide();
+    changeDotSlide();
     translateX = -(currentSlide * windowWidth);
     bannerSlideUl.style.transform = `translateX(${translateX}px)`;
   }
@@ -96,7 +96,7 @@ const clearDot = () => {
   }
 };
 
-const chageDotSlide = (index?: number) => {
+const changeDotSlide = (index?: number) => {
   const AllDotButton = document.querySelectorAll(".dotButton");
   if (index !== undefined) {
     const targetNode = AllDotButton[index];
@@ -139,6 +139,6 @@ export const sideButtonClick = (event: ButtonClickType) => {
 
 export const init = (ref: HTMLUListElement) => {
   currentSlide = 0;
-  chageDotSlide(0);
+  changeDotSlide(0);
   initSlideUlWidth(ref);
 };

@@ -26,7 +26,6 @@ const counterSlice = createSlice({
       } else {
         state.idList.push(action.payload);
         const getData = localStorage.getItem("itemNum");
-        const getorderData = localStorage.getItem("orderData");
         if (getData === null) {
           const setData = JSON.stringify([action.payload]);
           localStorage.setItem("itemNum", setData);
@@ -61,7 +60,9 @@ const store = configureStore({
     counter1: counterSlice.reducer,
   },
 });
+// eslint-disable-next-line react-refresh/only-export-components
 export const { increment, decrement, changeNum } = counterSlice.actions;
+// eslint-disable-next-line react-refresh/only-export-components
 export const userDispatch = React.createContext<{
   Data: productType[];
 }>({ Data: [] });

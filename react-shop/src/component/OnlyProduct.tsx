@@ -47,10 +47,7 @@ export default function OnlyProduct() {
         setProductFilter(productData);
         break;
     }
-    const filterData = data.Data.filter((item) => {
-      return item.category === productCategory;
-    });
-    // setProductFilter(filterData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.Data, productCategory]);
   return (
     <>

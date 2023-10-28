@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { userDispatch } from "../App";
 import { ProductListType } from "../componentType/MainProductList";
 import { Link } from "react-router-dom";

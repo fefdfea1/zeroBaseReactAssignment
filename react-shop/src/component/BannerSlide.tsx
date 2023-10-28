@@ -1,7 +1,7 @@
 import { clickDotButton, init } from "../script/BannerSlide";
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
-import { FiArrowRight } from "react-icons/Fi";
+import { FiArrowRight } from "react-icons/fi";
 import style from "../css/Banner.module.css";
 
 export default function BannerSlide() {

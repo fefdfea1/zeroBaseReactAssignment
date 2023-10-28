@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext, useRef } from "react";
-import { BiSun } from "react-icons/Bi";
-import { BiShoppingBag } from "react-icons/Bi";
-import { BsMoon } from "react-icons/Bs";
+import { BiSun } from "react-icons/bi";
+import { BiShoppingBag } from "react-icons/bi";
+import { BsMoon } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { RootState, changeNum, userDispatch } from "../App";
 import { Link } from "react-router-dom";
@@ -41,7 +41,7 @@ export default function Header() {
     }, 300);
   };
 
-  const clickSearchResult = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const clickSearchResult = () => {
     setInput("");
     setSearchResult([]);
   };
@@ -152,8 +152,8 @@ export default function Header() {
                         <Link
                           to={`/${item.category}/detail/${item.id}`}
                           data-category={`${item.category}`}
-                          onClick={(event) => {
-                            clickSearchResult(event);
+                          onClick={() => {
+                            clickSearchResult();
                           }}
                           className="w-full h-full block p-4"
                         >

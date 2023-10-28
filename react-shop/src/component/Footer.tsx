@@ -1,19 +1,7 @@
 import style from "../css/footer.module.css";
-import { useState, useEffect } from "react";
 import { FaGithubAlt, FaFacebookSquare } from "react-icons/Fa";
-import { AiOutlineInstagram } from "react-icons/Ai";
+import { AiOutlineInstagram } from "react-icons/ai";
 export default function Footer() {
-  const [darkMode, setDarkMode] = useState(true);
-  const getDarkMode = localStorage.getItem("viewMode");
-  useEffect(() => {
-    const getDarkMode = localStorage.getItem("viewMode");
-    if (getDarkMode !== null) {
-      const parse = JSON.parse(getDarkMode);
-      if (!parse) {
-        setDarkMode(false);
-      }
-    }
-  }, []);
   return (
     <footer
       className={`py-6 ${style.footerBackground} w-full ${style.footerBorder}`}
