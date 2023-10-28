@@ -1,5 +1,5 @@
 import style from "../css/footer.module.css";
-import { FaGithubAlt, FaFacebookSquare } from "react-icons/Fa";
+import { FaGithubAlt, FaFacebookSquare } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 export default function Footer() {
   return (

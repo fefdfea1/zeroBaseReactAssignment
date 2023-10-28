@@ -23,6 +23,7 @@ export default function Detail() {
   useEffect(() => {
     window.localStorage.setItem("data", JSON.stringify(currentItem));
     drawStar(currentItem[0].rating);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (data.Data.length === 0) {
     const getLocalData = window.localStorage.getItem("data");
