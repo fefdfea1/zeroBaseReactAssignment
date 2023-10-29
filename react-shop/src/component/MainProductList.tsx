@@ -96,7 +96,7 @@ export default function MainProductList() {
                             <img
                               src={item.image}
                               alt="상품 이미지"
-                              className="w-9/12 h-44 mx-auto"
+                              className="w-3/6 h-44 mx-auto"
                             />
                           </figure>
                           <div className="w-full text-left px-4 mt-7 whitespace-nowrap flex flex-col">
