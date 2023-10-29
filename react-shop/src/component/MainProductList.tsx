@@ -49,7 +49,7 @@ export default function MainProductList() {
         length: Object.keys(ProductList !== null ? ProductList : 0).length,
       }).map((_, index) => {
         return (
-          <>
+          <div key={`key-${index}`}>
             <h2
               className={`text-center font-bold md:text-4xl ${
                 index > 0 && "mt-10"
@@ -86,6 +86,7 @@ export default function MainProductList() {
                   return (
                     <SwiperSlide
                       className={`w-80 bg-white shrink-0 mr-20 relative ${style.wrapperWidth}`}
+                      key={item.id}
                     >
                       <Link to={`/detail/${item.id}`}>
                         <div
@@ -117,7 +118,7 @@ export default function MainProductList() {
                   );
                 })}
             </Swiper>
-          </>
+          </div>
         );
       })}
     </div>

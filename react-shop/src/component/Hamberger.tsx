@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 export default function Hamberger() {
   return (
     <>
-      <input
-        type="checkbox"
-        className="bg-transparent hidden"
-        id="hamberger"
-        onChange={() => console.log("변경")}
-      />
+      <input type="checkbox" className="bg-transparent hidden" id="hamberger" />
       <label
         htmlFor="hamberger"
         className="block w-10 h-8 relative cursor-pointer z-50"

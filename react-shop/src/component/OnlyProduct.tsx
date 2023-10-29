@@ -19,7 +19,6 @@ export default function OnlyProduct() {
     switch (productCategory) {
       case "fashion":
         data.Data.forEach((item) => {
-          console.log(item);
           if (
             item.category === "women's clothing" ||
             item.category === "men's clothing"
@@ -40,7 +39,6 @@ export default function OnlyProduct() {
       case "jewery":
         data.Data.forEach((item) => {
           if (item.category === "jewelery") {
-            console.log(item);
             productData.push(item);
           }
         });
