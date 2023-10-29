@@ -15,7 +15,6 @@ let mouseClickState = false;
 export const mouseDown = (event: any) => {
   mousePosition.mouseDownPosition = 0;
   mouseClickState = true;
-  console.log(mouseClickState);
   const nowMouseX = event.clientX;
   mousePosition.mouseDownPosition = nowMouseX;
 };
@@ -23,7 +22,6 @@ export const mouseDown = (event: any) => {
 export const mouseUp = (event: any) => {
   mousePosition.mouseUpPosition = 0;
   mouseClickState = false;
-  console.log(mouseClickState);
   const nowMouseX = event.clientX;
   mousePosition.mouseUpPosition = nowMouseX;
 };
@@ -41,7 +39,6 @@ export const mouseMove = (event: any) => {
           mousePosition.mouseDownPosition - clientX
         }px)`;
       }
-      console.log();
     }
   }
 };
