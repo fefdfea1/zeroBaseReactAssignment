@@ -55,7 +55,6 @@
 <img src="https://github.com/fefdfea1/officeFinder_Front/assets/46808357/1ebbcd5f-0ec1-4692-b34c-8448856b31a6" alt="배너1" width="350">
 <img src="https://github.com/fefdfea1/officeFinder_Front/assets/46808357/d0ee81f9-d784-4438-a16c-0035e92a2d8b" alt="배너2" width="350"><img src="https://github.com/fefdfea1/officeFinder_Front/assets/46808357/10c987ce-7d1a-4ee8-92bb-f6c9ed0cf66c" alt="배너3" width="350">
 
-#### 상품 화면
 
 ##### 메인화면
 
