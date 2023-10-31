@@ -4,7 +4,8 @@
 <br>
 개발인원 : 1인
 
-배포주소 : [https://shoproject-virid.vercel.app/](<[https://](https://shoproject-virid.vercel.app/)>)
+배포주소 : <a href="https://shoproject-virid.vercel.app/">https://shoproject-virid.vercel.app/</a>
+<br>
 개발 프레임워크: React
 
 <hr style="color:#999">
