@@ -58,13 +58,11 @@
 
 ##### 메인화면
 
-디지털 & 악세사리
 
 <img src="https://github.com/fefdfea1/officeFinder_Front/assets/46808357/83c292c7-17a8-438e-bd25-a7a77a330b42" alt="상품 슬라이더1" width="500">
 <br>
 <br>
 
-패션 & 디지털
 
 <img src="https://github.com/fefdfea1/officeFinder_Front/assets/46808357/a1db794b-a563-4044-9bf8-f5b4cd83e5d1" alt="상품 슬라이더2" width="500">
 
