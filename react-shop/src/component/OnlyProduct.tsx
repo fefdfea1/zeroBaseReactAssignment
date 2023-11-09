@@ -88,7 +88,7 @@ export default function OnlyProduct() {
                         <img
                           src={item.image}
                           alt="상품 이미지"
-                          className="w-9/12 h-44 block"
+                          className="w-6/12 h-44 block"
                         />
                       </figure>
                       <div className="w-full text-left px-4 mt-7 whitespace-nowrap flex flex-col">
