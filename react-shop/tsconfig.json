@@ -13,7 +13,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["react/next", "react-dom/next"],
+    "types": [
+      "react/next",
+      "react-dom/next",
+      "jest",
+      "node",
+      "@testing-library/jest-dom"
+    ],
 
     /* Linting */
     "strict": true,
@@ -21,6 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "tsconfig.jest.json"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

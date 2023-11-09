@@ -10,6 +10,7 @@ import styles from "../css/Header.module.css";
 import { changeWhiteMode, changeDarkMode } from "../script/header";
 import { productType } from "../componentType/ProductData";
 import Hamberger from "./Hamberger";
+
 export default function Header() {
   const [darkMode, setDarkMode] = useState(true);
   const [input, setInput] = useState("");
@@ -20,10 +21,10 @@ export default function Header() {
     return state;
   });
   const ref = useRef<HTMLUListElement>(null);
-  let timer = 0;
+  let timer: NodeJS.Timeout;
 
   const searchResultFun = () => {
-    if (timer !== 0) {
+    if (timer !== undefined) {
       clearTimeout(timer);
     }
     timer = setTimeout(() => {
@@ -61,9 +62,13 @@ export default function Header() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    searchResultFun();
+  }, [input]);
   return (
     <header
-      className={` ${styles.header_color}  mobile:px-10 md:px-20 shadow-lg`}
+      className={`${styles.header_color}  mobile:px-10 md:px-20 shadow-lg`}
     >
       <div className="flex justify-between items-center w-auto mx-auto py-3">
         <nav className="navigation">
@@ -74,22 +79,30 @@ export default function Header() {
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/`}>React Shop</Link>
+              <Link to={`/`} data-testid="mainLink">
+                React Shop
+              </Link>
             </li>
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/OnlyProduct/fashion`}>패션</Link>
+              <Link to={`/OnlyProduct/fashion`} data-testid="mainFashion">
+                패션
+              </Link>
             </li>
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/OnlyProduct/jewery`}>액세서리</Link>
+              <Link to={`/OnlyProduct/jewery`} data-testid="mainJewery">
+                액세서리
+              </Link>
             </li>
             <li
               className={`px-3 font-semibold text-lg ${styles.headerFontColor}`}
             >
-              <Link to={`/OnlyProduct/digital`}>디지털</Link>
+              <Link to={`/OnlyProduct/digital`} data-testid="mainDigital">
+                디지털
+              </Link>
             </li>
           </ul>
         </nav>
@@ -102,6 +115,7 @@ export default function Header() {
                     changeWhiteMode();
                     setDarkMode(false);
                   }}
+                  data-testid={"whiteMode"}
                 >
                   <BiSun
                     style={{
@@ -117,6 +131,7 @@ export default function Header() {
                     changeDarkMode();
                     setDarkMode(true);
                   }}
+                  data-testid={"darkMode"}
                 >
                   <BsMoon
                     style={{
@@ -135,9 +150,9 @@ export default function Header() {
                 className={`px-4 h-12 w-60 rounded-md ${styles.inputBackground} text-white`}
                 onChange={(event) => {
                   setInput(event.target.value);
-                  searchResultFun();
                 }}
                 value={input}
+                data-testid={"searchBox"}
               />
               <div className="productList relative">
                 <ul
@@ -149,6 +164,7 @@ export default function Header() {
                       <li
                         key={item.id}
                         className={`${styles.searchListBorder} ${styles.searchListBackgroundColor}`}
+                        data-testid={"searchBoxItem"}
                       >
                         <Link
                           to={`/${item.category}/detail/${item.id}`}
@@ -172,7 +188,7 @@ export default function Header() {
             </li>
             <li className="pl-4">
               <button className={"h-11 relative"}>
-                <Link to={"/shoppingList"}>
+                <Link to={"/shoppingList"} data-testid="shoppingBasket">
                   <span
                     className="absolute px-2 py-1 bg-red-500 top-3 right-0
                             font-bold rounded-full text-xs transform translate-x-1/2 -translate-y-1/2

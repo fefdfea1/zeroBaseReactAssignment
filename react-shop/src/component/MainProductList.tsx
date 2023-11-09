@@ -4,7 +4,7 @@ import { ProductListType } from "../componentType/MainProductList";
 import { Link } from "react-router-dom";
 import { drawStar } from "../script/MainProductList";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import "swiper/swiper-bundle.css";
 import style from "../css/MainProductList.module.css";
 
 export default function MainProductList() {

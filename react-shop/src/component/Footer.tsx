@@ -8,13 +8,37 @@ export default function Footer() {
     >
       <div className="footerContainer w-full h-full flex justify-center items-center flex-col">
         <div className="cardList flex justify-center items-center">
-          <img src="/svg/visaCard.svg" alt="카드" className="w-10" />
-          <img src="/svg/discoverCard.svg" alt="카드" className="w-10" />
-          <img src="/svg/masterCard.svg" alt="카드" className="w-10" />
-          <img src="/svg/PayPalCard.svg" alt="카드" className="w-10" />
+          <img
+            src="/svg/visaCard.svg"
+            alt="카드"
+            className="w-10"
+            data-testid="VisaCard"
+          />
+          <img
+            src="/svg/discoverCard.svg"
+            alt="카드"
+            className="w-10"
+            data-testid="DiscoverCard"
+          />
+          <img
+            src="/svg/masterCard.svg"
+            alt="카드"
+            className="w-10"
+            data-testid="MasterCard"
+          />
+          <img
+            src="/svg/PayPalCard.svg"
+            alt="카드"
+            className="w-10"
+            data-testid="Paypal"
+          />
         </div>
         <div className="shareOption w-full flex justify-center content-center mt-4">
-          <a href="https://www.facebook.com/0base" target="_blank">
+          <a
+            href="https://www.facebook.com/0base"
+            target="_blank"
+            data-testid="FaceBook"
+          >
             <FaFacebookSquare
               style={{
                 width: "25px",
@@ -27,6 +51,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/zerobase.official/"
             target="_blank"
+            data-testid="Instagram"
           >
             <AiOutlineInstagram
               style={{
@@ -38,7 +63,7 @@ export default function Footer() {
             />
           </a>
 
-          <a href="https://github.com/" target="_blank">
+          <a href="https://github.com/" target="_blank" data-testid="Github">
             <FaGithubAlt
               style={{
                 width: "25px",

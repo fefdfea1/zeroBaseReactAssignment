@@ -52,16 +52,21 @@ const counterSlice = createSlice({
     changeNum(state, action) {
       state.idList = action.payload;
     },
+
+    clearItem(state) {
+      state.idList = [];
+    },
   },
 });
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     counter1: counterSlice.reducer,
   },
 });
 // eslint-disable-next-line react-refresh/only-export-components
-export const { increment, decrement, changeNum } = counterSlice.actions;
+export const { increment, decrement, changeNum, clearItem } =
+  counterSlice.actions;
 // eslint-disable-next-line react-refresh/only-export-components
 export const userDispatch = React.createContext<{
   Data: productType[];

@@ -9,12 +9,13 @@ export default function Reciept(props: {
   let parseData: productType[] = [];
   if (typeof getData === "string") {
     parseData = JSON.parse(getData);
-    localStorage.setItem("shoppingItem", JSON.stringify([]));
-    localStorage.setItem("itemNum", JSON.stringify([]));
+    localStorage.removeItem("shoppingItem");
+    localStorage.removeItem("itemNum");
   }
   return (
     <div
       className={`w-full h-full fixed ${style.recieptPosition} z-50 ${style.background} flex justify-center items-center`}
+      data-testid="Reciept"
     >
       <div
         className={`productContainer w-4/6 pb-10 px-10 ${style.productBackground} relative`}

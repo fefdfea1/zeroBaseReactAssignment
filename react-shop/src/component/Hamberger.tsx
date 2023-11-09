@@ -20,16 +20,24 @@ export default function Hamberger() {
       <div className={`fixed left-0 top-0  w-5/12 h-screen slideMenu z-40`}>
         <ul className="w-full h-full flex flex-col justify-center items-center slideMenuUl">
           <li>
-            <Link to={"/"}>메인화면</Link>
+            <Link to={"/"} data-testid="hambergerMainLink">
+              React Shop
+            </Link>
           </li>
           <li>
-            <Link to={"/OnlyProduct/fashion"}>패션</Link>
+            <Link to={"/OnlyProduct/fashion"} data-testid="hambergerFashion">
+              패션
+            </Link>
           </li>
           <li>
-            <Link to={"/OnlyProduct/jewery"}>액세서리</Link>
+            <Link to={"/OnlyProduct/jewery"} data-testid="hambergerJewery">
+              액세서리
+            </Link>
           </li>
           <li>
-            <Link to={"/OnlyProduct/digital"}>디지털</Link>
+            <Link to={"/OnlyProduct/digital"} data-testid="hambergerDigital">
+              디지털
+            </Link>
           </li>
         </ul>
       </div>

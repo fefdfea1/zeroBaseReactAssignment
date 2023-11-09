@@ -37,11 +37,12 @@ export default function Detail() {
       <section className={`w-full ${detailStyle.sectionHeight}`}>
         <Header />
         <ul className="flex text-white font-bold text-xl mt-11 mobile:ml-6 md:ml-20">
-          <li className={`${detailStyle.liFontColor}`}>
+          <li className={`${detailStyle.liFontColor}`} data-testid="category">
             {currentItem !== undefined ? currentItem[0].category : null}
           </li>
           <li
             className={`ml-9 detailStyle ${detailStyle.arrow} ${detailStyle.liFontColor}`}
+            data-testid="productName"
           >
             {currentItem !== undefined ? currentItem[0].title : null}
           </li>
@@ -64,11 +65,14 @@ export default function Detail() {
             <p className={`${detailStyle.FontColor} text-3xl`}>
               {currentItem[0].title}
             </p>
-            <p className={`${detailStyle.FontColor} mt-5 text-2xl font-medium`}>
+            <p
+              className={`${detailStyle.FontColor} mt-5 text-2xl font-medium`}
+              data-testid="description"
+            >
               {currentItem[0].description}
             </p>
             <div className="rating flex mt-5">
-              <ul className="flex starContainer">
+              <ul className="flex starContainer" data-testid="fillStar">
                 <li className={`${detailStyle.blankStar}`}></li>
                 <li className={`${detailStyle.blankStar} ml-3`}></li>
                 <li className={`${detailStyle.blankStar} ml-3`}></li>
@@ -84,12 +88,16 @@ export default function Detail() {
                 </ul>
               </div>
             </div>
-            <p className={`price ${detailStyle.FontColor} text-3xl mt-5`}>
+            <p
+              className={`price ${detailStyle.FontColor} text-3xl mt-5`}
+              data-testid="price"
+            >
               ${currentItem !== undefined ? currentItem[0].price : null}
             </p>
             <div className="actionButton mt-5 flex">
               <button
                 className={`button py-1 px-4 ${detailStyle.buttonBackgroundColor} rounded-md text-white`}
+                data-testid="shoppingButton"
                 onClick={() => {
                   dispach(increment(currentItem[0].id));
                 }}
@@ -98,6 +106,7 @@ export default function Detail() {
               </button>
               <button
                 className={` ${detailStyle.button2Color} rounded-md text-white ml-5`}
+                data-testid="shoppingButton"
               >
                 <Link to={"/shoppingList"} className="p-3 block">
                   장바구니로 이동

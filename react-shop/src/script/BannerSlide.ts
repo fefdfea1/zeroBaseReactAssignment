@@ -5,7 +5,7 @@ const timer = 3000;
 let bannerSlideUl: HTMLUListElement;
 let bannerSlide: NodeList;
 const windowWidth = window.innerWidth;
-let timeId = 0;
+let timeId: NodeJS.Timeout | null;
 const initSlideUlWidth = (ref: HTMLUListElement) => {
   bannerSlide = ref.childNodes;
   bannerSlideUl = ref;
@@ -13,7 +13,7 @@ const initSlideUlWidth = (ref: HTMLUListElement) => {
   if (bannerSlideUl instanceof HTMLUListElement) {
     bannerSlideUl.style.width = listLeng * windowWidth + "px";
   }
-  if (timeId === 0) {
+  if (timeId !== null) {
     moveinfiniteSlideImage(timer);
     DotButtonInit();
   }
@@ -74,7 +74,7 @@ const rightButtonClick = () => {
 export const clickDotButton = (event: ButtonClickType) => {
   const AllDotButton = document.querySelectorAll(".dotButton");
   const target = event.target;
-  clearInterval(timeId);
+  if (timeId) clearInterval(timeId);
   if (target instanceof HTMLButtonElement) {
     clearDot();
     let index: dataIndex = target.dataset.index;
@@ -123,7 +123,7 @@ const DotButtonInit = () => {
 export const sideButtonClick = (event: ButtonClickType) => {
   const target = event.target;
   if (target instanceof HTMLButtonElement) {
-    clearInterval(timeId);
+    if (timeId) clearInterval(timeId);
     if (target.classList.contains("prevButton")) {
       const data = target.dataset.prev;
       if (typeof data === "string") {

@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { userDispatch, RootState } from "../App";
+import { useDispatch, useSelector } from "react-redux";
+import { userDispatch, RootState, clearItem } from "../App";
 import { productType } from "../componentType/ProductData";
 import { useState, useContext, useEffect } from "react";
 import Header from "./Header";
@@ -39,12 +39,18 @@ const changeRecieptState = (
 
 export default function ShoppingList() {
   const selector = useSelector((state: RootState) => state);
+  const dispatch = useDispatch();
   const data = useContext(userDispatch);
   const findData: productType[] | string = [];
   const [productState, setProductState] = useState(false);
   const [productQuantity, setQuantity] = useState<number[]>([]);
   const [recieptState, setReciept] = useState(false);
   const [Product, setProduct] = useState<productType[]>([]);
+
+  const handleClearItem = () => {
+    dispatch(clearItem()); // clearItem 액션을 디스패치
+  };
+
   useEffect(() => {
     const getItemNumData = localStorage.getItem("itemNum");
     //새로고침을 하지 않았을때 상품의 데이터id가 있다면 해당 아이디를 이용하여 상품을 찾고 findData에 push
@@ -69,7 +75,7 @@ export default function ShoppingList() {
       }
     }
     //상품이 있을때 새로고침시 모든 상품의 갯수를 1로 다시 맞춤
-    if (getItemNumData !== null) {
+    if (getItemNumData !== null && getItemNumData.length > 0) {
       const parse = JSON.parse(getItemNumData);
       setQuantity(Array(parse.length).fill(1));
       setProductState(true);
@@ -96,6 +102,7 @@ export default function ShoppingList() {
                   <li
                     className={`mobile:mt-10 md:mt-6 ${style.liWidth}`}
                     key={item.id}
+                    data-testid="productTitle"
                   >
                     <div
                       className={`productList flex items-center flex mobile:flex-col md:flex-row`}
@@ -118,6 +125,7 @@ export default function ShoppingList() {
                         </p>
                         <p
                           className={`${style.FontColor} text-4xl mb-8 font-bold mobile:text-sm lg:text-3xl`}
+                          data-testid="price"
                         >
                           {Product
                             ? `$${item.price * productQuantity[i]}`
@@ -126,6 +134,7 @@ export default function ShoppingList() {
                         <div className="productQuantity">
                           <button
                             className={`${style.FontColor} ${style.buttonBackgroundColor} p-4  font-bold rounded-l-2xl mobile:text-sm lg:text-3xl`}
+                            data-testid="minusButton"
                             onClick={() => {
                               setQuantity(
                                 changeQuantityMinuse(productQuantity, i)
@@ -136,11 +145,13 @@ export default function ShoppingList() {
                           </button>
                           <span
                             className={`ml-7 ${style.FontColor} text-xl font-bold mobile:text-sm lg:text-3xl`}
+                            data-testid="productNum"
                           >
                             {productQuantity[i]}
                           </span>
                           <button
                             className={`${style.FontColor}  ${style.buttonBackgroundColor} py-4 px-4 ml-7 font-bold rounded-r-2xl mobile:text-sm lg:text-3xl`}
+                            data-testid="plusButton"
                             onClick={() => {
                               setQuantity(
                                 changeQuantityPluse(productQuantity, i)
@@ -176,10 +187,12 @@ export default function ShoppingList() {
                 <button
                   className={`ml-5 p-4 text-white ${style.buttonBackgroundColor} rounded-2xl mobile:text-sm lg:text-3xl md: mr-20 lg:mr-0`}
                   onClick={() => {
+                    handleClearItem();
                     changeRecieptState(setReciept);
                     setProduct([]);
                     setProductState(false);
                   }}
+                  data-tetstid="buyButton"
                 >
                   구매하기
                 </button>

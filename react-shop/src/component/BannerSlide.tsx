@@ -6,11 +6,29 @@ import style from "../css/Banner.module.css";
 
 export default function BannerSlide() {
   const ref = useRef<HTMLUListElement>(null);
-  let timer = 0;
+  let timer: NodeJS.Timeout | null = null;
   const BannerImgPath = [
-    { src: "/img/img_shop_fashion.jpeg", url: "fashion", id: 1 },
-    { src: "/img/img_shop_digital.jpeg", url: "digital", id: 2 },
-    { src: "/img/img_shop_grocery.jpeg", url: "jewery", id: 3 },
+    {
+      src: "/img/img_shop_fashion.jpeg",
+      url: "fashion",
+      id: 1,
+      title: "물빠진 청바지!",
+      desc: "이제 막 도착한 패션 청바지를 구경해 보세요.",
+    },
+    {
+      src: "/img/img_shop_digital.jpeg",
+      url: "digital",
+      id: 2,
+      title: "다양한 전자제품!",
+      desc: "다양한 전자제품을 보고 마음에 드는 상품을 구매하세요!",
+    },
+    {
+      src: "/img/img_shop_jewery.jpg",
+      url: "jewery",
+      id: 3,
+      title: "수많은 악세사리!",
+      desc: "수많은 악세사리를 구경하세요!",
+    },
   ];
   useEffect(() => {
     if (ref.current instanceof HTMLUListElement) {
@@ -19,12 +37,12 @@ export default function BannerSlide() {
   }, []);
 
   window.addEventListener("resize", () => {
-    if (timer === 0) {
+    if (timer !== null) {
       timer = setTimeout(() => {
         if (ref.current instanceof HTMLUListElement) {
           init(ref.current);
         }
-        timer = 0;
+        timer = null;
       }, 200);
     }
   });
@@ -47,12 +65,8 @@ export default function BannerSlide() {
                 <div
                   className={`productDesc absolute top-2/4 ${style.bannerTextPotionX} ${style.TranslateY50} leading-loose`}
                 >
-                  <p className="text-4xl text-white font-bold">
-                    물빠진 청바지!
-                  </p>
-                  <p className="text-white">
-                    이제 막 도착한 패션 청바지를 구경해 보세요.
-                  </p>
+                  <p className="text-4xl text-white font-bold">{item.title}</p>
+                  <p className="text-white">{item.desc}</p>
                   <button
                     className={`flex
                       items-center

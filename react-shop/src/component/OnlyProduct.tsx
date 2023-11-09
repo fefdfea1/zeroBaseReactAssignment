@@ -52,10 +52,11 @@ export default function OnlyProduct() {
       <Header />
       <section
         className={`w-full flex ${style.sectionBackground} ${style.sectionHeight} items-center justify-center`}
+        data-testid={`swiper`}
       >
         <div className="w-full pl-10 pr-10">
           <Swiper
-            className="w-full flex shrink-0"
+            className={`w-full flex shrink-0`}
             spaceBetween={50}
             breakpoints={{
               640: {
